@@ -1,0 +1,53 @@
+/* assets/css/base/_typography.css */
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md); /* 16px */
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Hierarquia de Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: var(--space-md); /* 16px */
+  color: var(--color-primary); /* Cor primária para títulos */
+}
+
+h1 {
+  font-size: var(--font-size-xxl); /* 40px */
+}
+
+h2 {
+  font-size: var(--font-size-xl); /* 28px */
+}
+
+h3 {
+  font-size: var(--font-size-lg); /* 20px */
+  color: var(--color-text); /* Títulos H3 (ex: cards) usam cor de texto normal */
+}
+
+/* Parágrafos e Links */
+p {
+  margin-bottom: var(--space-md); /* 16px */
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Texto em negrito */
+strong, b {
+  font-weight: 600;
+}

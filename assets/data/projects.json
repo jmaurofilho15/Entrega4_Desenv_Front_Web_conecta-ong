@@ -1,0 +1,23 @@
+[
+  {
+    "id": "proj_educacao",
+    "title": "Projeto Sementes do Amanhã",
+    "description": "Oferecemos reforço escolar, oficinas de arte e tecnologia...",
+    "badge": "Educação",
+    "badgeClass": "badge-primary"
+  },
+  {
+    "id": "proj_ambiental",
+    "title": "Projeto Raízes Vivas",
+    "description": "Focamos no reflorestamento de áreas degradadas...",
+    "badge": "Meio Ambiente",
+    "badgeClass": "badge-accent"
+  },
+  {
+    "id": "proj_saude",
+    "title": "Saúde Comunitária",
+    "description": "Levamos atendimento médico e odontológico básico...",
+    "badge": "Saúde",
+    "badgeClass": "badge-secondary"
+  }
+]

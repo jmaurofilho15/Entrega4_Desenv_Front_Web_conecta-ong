@@ -1,0 +1,49 @@
+/* assets/css/components/_form.css */
+.registration-form {
+    max-width: 800px;
+    margin: var(--space-lg) auto;
+    padding: var(--space-lg);
+    background: var(--color-background-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+.form-control {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 100, 180, 0.2);
+    outline: none;
+}
+
+/* Estilo para campos inválidos (via JS) */
+.form-control.is-invalid {
+    border-color: var(--color-feedback-error);
+}
+/* Estilo para campos válidos (via JS) */
+.form-control.is-valid {
+    border-color: var(--color-feedback-success);
+}
+
+/* Container da mensagem de erro */
+.error-message {
+    color: var(--color-feedback-error);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-xs);
+    display: block; 
+    min-height: 1.2em; 
+}

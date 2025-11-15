@@ -1,0 +1,46 @@
+/* assets/css/components/_button.css */
+.btn {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+/* Botão Primário/Destaque (Verde) */
+.btn-primary, .btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: 2px solid var(--color-accent);
+}
+.btn-primary:hover, .btn-accent:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+/* Botão Secundário (Cinza/Limpar) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-border);
+}
+.btn-secondary:hover {
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+    border-color: var(--color-text-light);
+}
+
+/* Container para botões de formulário */
+.form-buttons {
+    margin-top: var(--space-lg);
+}
+/* Adiciona espaçamento entre botões (ex: Enviar | Limpar) */
+.btn + .btn {
+    margin-left: var(--space-md);
+}

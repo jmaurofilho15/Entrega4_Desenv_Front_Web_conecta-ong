@@ -1,0 +1,25 @@
+/* assets/css/layout/_header.css */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  
+  /* Posição relativa para dropdowns e para o contexto de z-index do menu */
+  position: relative; 
+  /* z-index: auto (padrão) - Isso é crucial para o menu funcionar */
+}
+
+.main-header .logo-link {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  text-decoration: none;
+  color: var(--color-primary);
+  /* Garante que o logo não seja "espremido" no mobile */
+  flex-shrink: 0; 
+}

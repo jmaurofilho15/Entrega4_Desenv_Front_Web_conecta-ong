@@ -1,0 +1,41 @@
+/* assets/css/layout/_grid.css */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--space-md) / -2);
+}
+
+[class^="col-"] {
+    position: relative;
+    width: 100%;
+    padding: 0 calc(var(--space-md) / 2);
+    margin-bottom: var(--space-md);
+}
+
+/* Breakpoint para tablets (sm = 576px) */
+@media (min-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Breakpoint para tablets e desktops (md = 768px) */
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-md-4 {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
