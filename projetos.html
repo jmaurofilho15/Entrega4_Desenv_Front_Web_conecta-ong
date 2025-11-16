@@ -17,14 +17,17 @@
              ConectaONG
         </a>
         
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav-list">
+        </button>
+
+        <button id="theme-toggle" aria-label="Alternar modo claro e escuro">
+            <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+            <span class="theme-icon-sun" aria-hidden="true">☀️</span>
         </button>
 
         <nav class="main-nav">
             <ul>
+                    <ul id="main-nav-list"></ul>
                 <li><a href="index.html">Início</a></li>
                 <li class="has-dropdown"> 
                     <a href="projetos.html">Projetos</a>
@@ -86,5 +89,6 @@
 
     <script src="assets/js/navigation.js" defer></script>
     <script src="assets/js/projectLoader.js" defer></script> 
+    <script src="assets/js/theme.js" defer></script>
 </body>
 </html>

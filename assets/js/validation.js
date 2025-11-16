@@ -83,12 +83,14 @@ function validateField(field) {
 
     if (!isValid) {
         field.classList.add('is-invalid');
+        field.setAttribute('aria-invalid', 'true');
         field.classList.remove('is-valid');
         if (errorEl) {
             errorEl.textContent = field.validationMessage;
         }
     } else {
         field.classList.remove('is-invalid');
+        field.setAttribute('aria-invalid', 'false');
         field.classList.add('is-valid');
         if (errorEl) {
             errorEl.textContent = '';
