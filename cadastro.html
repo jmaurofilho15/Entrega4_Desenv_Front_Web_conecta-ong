@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - ConectaONG</title>
     <meta name="description" content="Cadastre-se para ser um voluntário ou apoiador da ConectaONG.">
+    
     <link rel="stylesheet" href="assets/css/main.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -17,14 +19,14 @@
              ConectaONG
         </a>
         
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav-list">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
         <nav class="main-nav">
-            <ul>
+            <ul id="main-nav-list">
                 <li><a href="index.html">Início</a></li>
                 <li class="has-dropdown"> 
                     <a href="projetos.html">Projetos</a>
@@ -42,6 +44,11 @@
                 </li>
             </ul>
         </nav>
+
+        <button id="theme-toggle" aria-label="Alternar modo claro e escuro">
+            <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+            <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+        </button>
     </header>
 
     <main>
@@ -58,59 +65,77 @@
 
                     <fieldset>
                         <legend>Dados Pessoais</legend>
+                        
                         <div class="form-group">
                             <label for="nome">Nome Completo:</label>
-                            <input type="text" id="nome" name="nome_completo" class="form-control" required placeholder="Seu nome completo">
-                            <div class="error-message" aria-live="polite"></div>
+                            <input type="text" id="nome" name="nome_completo" class="form-control" required placeholder="Seu nome completo"
+                                   aria-invalid="false" aria-describedby="nome-error">
+                            <div id="nome-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" class="form-control" required placeholder="exemplo@dominio.com">
-                            <div class="error-message" aria-live="polite"></div>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="exemplo@dominio.com"
+                                   aria-invalid="false" aria-describedby="email-error">
+                            <div id="email-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="cpf">CPF:</label>
                             <input type="tel" id="cpf" name="cpf" class="form-control" required 
                                    placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-                                   title="Digite um CPF no formato: 000.000.000-00">
-                            <div class="error-message" aria-live="polite"></div>
+                                   title="Digite um CPF no formato: 000.000.000-00"
+                                   aria-invalid="false" aria-describedby="cpf-error">
+                            <div id="cpf-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="telefone">Telefone (Celular):</label>
                             <input type="tel" id="telefone" name="telefone" class="form-control" required 
                                    placeholder="(00) 00000-0000" pattern="\(\d{2}\) \d{5}-\d{4}"
-                                   title="Digite um telefone no formato: (00) 00000-0000">
-                            <div class="error-message" aria-live="polite"></div>
+                                   title="Digite um telefone no formato: (00) 00000-0000"
+                                   aria-invalid="false" aria-describedby="telefone-error">
+                            <div id="telefone-error" class="error-message" aria-live="polite"></div>
                         </div>
+
                         <div class="form-group">
                             <label for="nascimento">Data de Nascimento:</label>
-                            <input type="date" id="nascimento" name="data_nascimento" class="form-control" required>
-                            <div class="error-message" aria-live="polite"></div>
+                            <input type="date" id="nascimento" name="data_nascimento" class="form-control" required
+                                   aria-invalid="false" aria-describedby="nascimento-error">
+                            <div id="nascimento-error" class="error-message" aria-live="polite"></div>
                         </div>
                     </fieldset>
                     
                     <fieldset>
                         <legend>Endereço</legend>
+                        
                         <div class="form-group">
                             <label for="cep">CEP:</label>
                             <input type="tel" id="cep" name="cep" class="form-control" required 
                                    placeholder="00000-000" pattern="\d{5}-\d{3}"
-                                   title="Digite um CEP no formato: 00000-000">
-                            <div class="error-message" aria-live="polite"></div>
+                                   title="Digite um CEP no formato: 00000-000"
+                                   aria-invalid="false" aria-describedby="cep-error">
+                            <div id="cep-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="endereco">Endereço (Rua e Número):</label>
-                            <input type="text" id="endereco" name="endereco" class="form-control" required placeholder="Ex: Rua das Flores, 100">
-                            <div class="error-message" aria-live="polite"></div>
+                            <input type="text" id="endereco" name="endereco" class="form-control" required placeholder="Ex: Rua das Flores, 100"
+                                   aria-invalid="false" aria-describedby="endereco-error">
+                            <div id="endereco-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" name="cidade" class="form-control" required>
-                            <div class="error-message" aria-live="polite"></div>
+                            <input type="text" id="cidade" name="cidade" class="form-control" required
+                                   aria-invalid="false" aria-describedby="cidade-error">
+                            <div id="cidade-error" class="error-message" aria-live="polite"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="estado">Estado:</label>
-                            <select id="estado" name="estado" class="form-control" required>
+                            <select id="estado" name="estado" class="form-control" required
+                                    aria-invalid="false" aria-describedby="estado-error">
                                 <option value="">Selecione...</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -124,7 +149,7 @@
                                 <option value="MA">Maranhão</option>
                                 <option value="MT">Mato Grosso</option>
                                 <option value="MS">Mato Grosso do Sul</option>
-<option value="MG">Minas Gerais</option>
+                                <option value="MG">Minas Gerais</option>
                                 <option value="PA">Pará</option>
                                 <option value="PB">Paraíba</option>
                                 <option value="PR">Paraná</option>
@@ -140,7 +165,7 @@
                                 <option value="SE">Sergipe</option>
                                 <option value="TO">Tocantins</option>
                             </select>
-                            <div class="error-message" aria-live="polite"></div>
+                            <div id="estado-error" class="error-message" aria-live="polite"></div>
                         </div>
                     </fieldset>
 
@@ -149,7 +174,6 @@
                         <div class="form-group">
                             <label for="mensagem">Deixe sua mensagem:</label>
                             <textarea id="mensagem" name="mensagem" class="form-control" rows="5" placeholder="Dúvidas, sugestões ou comentários..."></textarea>
-                            <div class="error-message" aria-live="polite"></div>
                         </div>
                     </fieldset>
 
@@ -171,5 +195,6 @@
     <script src="assets/js/masks.js" defer></script>
     <script src="assets/js/navigation.js" defer></script>
     <script src="assets/js/validation.js" defer></script> 
+    <script src="assets/js/theme.js" defer></script> 
 </body>
 </html>

@@ -1,0 +1,42 @@
+/* assets/css/layout/_theme.css */
+
+/* 1. Estilo do Botão */
+#theme-toggle {
+    background: none; border: none; cursor: pointer;
+    font-size: 1.5rem; color: var(--color-text);
+    padding: var(--space-sm); margin-left: var(--space-md);
+    border-radius: var(--border-radius);
+}
+#theme-toggle:hover { color: var(--color-primary); }
+
+/* 2. Lógica dos Ícones */
+.theme-icon-sun,
+[data-theme="dark"] .theme-icon-moon {
+    display: none;
+}
+[data-theme="dark"] .theme-icon-sun {
+    display: inline-block;
+}
+
+/* 3. Variáveis do Modo Escuro */
+[data-theme="dark"] {
+    --color-text: #E0E0E0;
+    --color-text-light: #AAAAAA;
+    --color-border: #444444;
+    --color-background: #121212;
+    --color-background-light: #1E1E1E;
+    --color-primary: #4DAAFF;
+    --color-primary-dark: #7BC4FF;
+}
+
+/* 4. Respeita a Preferência do Sistema */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #E0E0E0;
+        --color-text-light: #AAAAAA;
+        --color-border: #444444;
+        --color-background: #121212;
+        --color-background-light: #1E1E1E;
+        --color-primary: #4DAAFF;
+    }
+}

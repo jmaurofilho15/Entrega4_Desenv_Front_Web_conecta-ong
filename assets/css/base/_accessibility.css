@@ -1,0 +1,13 @@
+/* assets/css/base/_accessibility.css */
+
+/* Acessibilidade  "focus management" */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary-dark, #004A8C);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
