@@ -1,0 +1,62 @@
+/* assets/css/base/_reset.css */
+
+/*
+ * 1. Reseta o box-sizing para todos os elementos.
+ * Isso torna o dimensionamento de 'padding' e 'border' mais intuitivo.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * 2. Define o 'font-size' base no <html> (geralmente 16px).
+ * Usa 'line-height' e 'text-rendering' para melhor legibilidade.
+ */
+html {
+  font-size: 100%; /* 16px */
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/*
+ * 3. Define a altura do 'body' e remove qualquer 'margin' padrão.
+ */
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+/*
+ * 4. Remove estilos de lista padrão.
+ */
+ul,
+ol {
+  list-style: none;
+}
+
+/*
+ * 5. Garante que mídias (como <img>, <svg>) sejam responsivas.
+ * (Embora tenhamos removido as imagens, esta é uma boa prática).
+ */
+img,
+svg,
+video,
+canvas,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+ * 6. Remove 'text-decoration' de links (será re-adicionado no _typography).
+ */
+a {
+  text-decoration: none;
+  color: inherit;
+}

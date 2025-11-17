@@ -1,0 +1,35 @@
+/* assets/css/layout/_footer.css */
+
+.main-footer {
+  background-color: var(--color-background-light);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) 0;
+  text-align: center;
+  margin-top: var(--space-xl); /* Empurra o rodapé para baixo */
+}
+
+.main-footer .container {
+  /* O .container (do _grid.css) centraliza o conteúdo */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.main-footer p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.main-footer address {
+  font-style: normal;
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+.main-footer h2 {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}

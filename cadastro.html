@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ConectaONG</title>
+    <meta name="description" content="Cadastre-se para ser um voluntário ou apoiador da ConectaONG.">
+    
+    <link rel="stylesheet" href="dist/css/main.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo-link">
+             ConectaONG
+        </a>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav-list">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav">
+            <ul id="main-nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li class="has-dropdown"> 
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="dropdown">
+                        <li><a href="projetos.html">Ver Todos</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="cadastro.html">Participe</a>
+                    <ul class="dropdown">
+                        <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                        <li><a href="projetos.html#doacao">Doação</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle" aria-label="Alternar modo claro e escuro">
+            <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+            <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+        </button>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Junte-se a Nós</h1>
+            <p class="section-subtitle">Preencha o formulário abaixo para se cadastrar.</p>
+            
+            <section class="registration-form">
+                <h2>Formulário de Cadastro</h2>
+                
+                <form method="POST" novalidate>
+                    
+                    <div id="form-feedback" role="alert"></div>
+
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome_completo" class="form-control" required placeholder="Seu nome completo"
+                                   aria-invalid="false" aria-describedby="nome-error">
+                            <div id="nome-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="exemplo@dominio.com"
+                                   aria-invalid="false" aria-describedby="email-error">
+                            <div id="email-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cpf">CPF:</label>
+                            <input type="tel" id="cpf" name="cpf" class="form-control" required 
+                                   placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                                   title="Digite um CPF no formato: 000.000.000-00"
+                                   aria-invalid="false" aria-describedby="cpf-error">
+                            <div id="cpf-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone (Celular):</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" required 
+                                   placeholder="(00) 00000-0000" pattern="\(\d{2}\) \d{5}-\d{4}"
+                                   title="Digite um telefone no formato: (00) 00000-0000"
+                                   aria-invalid="false" aria-describedby="telefone-error">
+                            <div id="telefone-error" class="error-message" aria-live="polite"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nascimento">Data de Nascimento:</label>
+                            <input type="date" id="nascimento" name="data_nascimento" class="form-control" required
+                                   aria-invalid="false" aria-describedby="nascimento-error">
+                            <div id="nascimento-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Endereço</legend>
+                        
+                        <div class="form-group">
+                            <label for="cep">CEP:</label>
+                            <input type="tel" id="cep" name="cep" class="form-control" required 
+                                   placeholder="00000-000" pattern="\d{5}-\d{3}"
+                                   title="Digite um CEP no formato: 00000-000"
+                                   aria-invalid="false" aria-describedby="cep-error">
+                            <div id="cep-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="endereco">Endereço (Rua e Número):</label>
+                            <input type="text" id="endereco" name="endereco" class="form-control" required placeholder="Ex: Rua das Flores, 100"
+                                   aria-invalid="false" aria-describedby="endereco-error">
+                            <div id="endereco-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" name="cidade" class="form-control" required
+                                   aria-invalid="false" aria-describedby="cidade-error">
+                            <div id="cidade-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" class="form-control" required
+                                    aria-invalid="false" aria-describedby="estado-error">
+                                <option value="">Selecione...</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                            <div id="estado-error" class="error-message" aria-live="polite"></div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Mensagem (Opcional)</legend>
+                        <div class="form-group">
+                            <label for="mensagem">Deixe sua mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="5" placeholder="Dúvidas, sugestões ou comentários..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary btn-accent">Enviar Cadastro</button>
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 ConectaONG. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="dist/js/bundle.min.js" defer></script>
+</body>
+</html>

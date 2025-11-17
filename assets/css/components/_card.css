@@ -1,0 +1,68 @@
+/* assets/css/components/_card.css */
+
+/* Container para os cards de projeto (usa CSS Grid para auto-ajuste) */
+.project-list-grid {
+    display: grid;
+    /* Cria colunas responsivas:
+      - Tenta criar colunas de no mínimo 300px.
+      - 'auto-fill' cria quantas colunas couberem.
+      - '1fr' faz com que elas se estiquem para preencher o espaço.
+    */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg); /* 24px de espaçamento entre os cards */
+    margin-top: var(--space-lg);
+}
+
+/* Estilo base do Card */
+.project-card, .engagement-card {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    
+    /* Usa Flexbox para o layout interno do card */
+    display: flex; 
+    flex-direction: column;
+}
+.project-card:hover, .engagement-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Conteúdo do Card */
+.card-content {
+    padding: var(--space-md);
+    flex-grow: 1; /* Faz o conteúdo crescer para preencher o card */
+    display: flex;
+    flex-direction: column;
+}
+.card-content h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+.card-content p {
+    flex-grow: 1; /* Empurra o botão para o final do card */
+    color: var(--color-text-light);
+}
+.card-content .btn {
+    margin-top: var(--space-md);
+    align-self: flex-start; /* Alinha o botão no início (esquerda) */
+}
+
+/* Layout para os cards 'Participe' (Voluntariado / Doação) */
+.engagement-options {
+    display: grid;
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+@media (min-width: 768px) {
+    /* Duas colunas no desktop */
+    .engagement-options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.engagement-card {
+    text-align: center;
+}

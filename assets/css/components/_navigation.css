@@ -1,0 +1,136 @@
+/* assets/css/components/_navigation.css */
+
+/* * 1. REGRAS GLOBAIS (Base do Desktop)
+ */
+
+.main-nav ul {
+    display: flex; /* Cria o menu horizontal */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav li {
+    position: relative;
+    margin-left: var(--space-lg);
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s;
+    display: block;
+}
+.main-nav a:hover, .main-nav a:focus {
+    background-color: var(--color-background-light);
+    color: var(--color-primary);
+}
+
+/* Botão Hamburger (Escondido por padrão) */
+.nav-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+    position: relative; 
+    z-index: 1002; /* Fica no TOPO de tudo */
+}
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-primary);
+    margin: 4px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* * 2. REGRAS DE HOVER (APENAS DESKTOP)
+ */
+@media (min-width: 992px) {
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--color-background);
+        box-shadow: var(--shadow-md);
+        border-radius: var(--border-radius);
+        padding: var(--space-sm) 0;
+        z-index: 1000;
+        min-width: 200px;
+    }
+    .has-dropdown:hover > .dropdown,
+    .has-dropdown:focus-within > .dropdown {
+        /* Esta regra agora SÓ funciona em desktops */
+        display: block; 
+    }
+}
+
+/* * 3. REGRAS DE MENU MOBILE (Overlay)
+ */
+@media (max-width: 991px) {
+    
+    /* Mostra o botão hambúrguer */
+    .nav-toggle {
+        display: block; 
+    }
+
+    /* Esconde o menu desktop e o transforma em overlay */
+    .main-nav {
+        display: none; 
+        position: fixed; /* Cobre a tela toda */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        padding-top: var(--space-xxxl); 
+        background: var(--color-background);
+        
+        /* Fica acima do header, mas abaixo do botão "X" */
+        z-index: 1001; 
+    }
+    
+    /* Mostra o overlay quando ativo (via JS) */
+    .main-nav.is-active {
+        display: block;
+    }
+
+    /* Estiliza a lista dentro do overlay */
+    .main-nav ul {
+        flex-direction: column; /* Empilha os links */
+        align-items: center;
+        width: 100%;
+    }
+    .main-nav li {
+        margin: var(--space-sm) 0;
+        width: 80%;
+        text-align: center;
+    }
+    .main-nav a { 
+        font-size: var(--font-size-lg);
+        padding: var(--space-md);
+    }
+    
+    /* 
+     * Impede que a regra de hover do desktop vaze para o mobile.
+     */
+    .has-dropdown .dropdown {
+        display: none !important; 
+    }
+
+    /* Animação do "X" */
+    .nav-toggle.is-active span {
+        background: var(--color-text);
+    }
+    .nav-toggle.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
