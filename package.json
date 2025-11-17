@@ -1,0 +1,19 @@
+{
+  "name": "entrega4-conecta-ong",
+  "version": "1.0.0",
+  "description": "Projeto final ConectaONG (HTML, CSS, JS, Acessibilidade, Build)",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "postcss assets/css/main.css -o dist/css/main.min.css",
+    "build:js": "terser assets/js/*.js -o dist/js/bundle.min.js -c -m",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^7.0.3",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "terser": "^5.31.3"
+  }
+}
